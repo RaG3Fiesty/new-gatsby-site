@@ -1,0 +1,17 @@
+::selection {
+  background-color: rgba(99, 255, 36, 0.4);
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  background-color: rgba(230, 238, 246, 0.4) !important;
+}
+
+.hero-banner {
+  background-image: url(publication-cover.png);
+  background-size: cover;
+}
