@@ -1,3 +1,4 @@
+/* General site */
 ::selection {
   background-color: rgba(99, 255, 36, 0.4);
 }
@@ -7,11 +8,89 @@
   margin: 0px;
 }
 
+/* Body */
+
 body {
-  background-color: rgba(230, 238, 246, 0.4) !important;
+  background-color: rgba(137, 174, 204, 0.4) !important;
 }
+
+a {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* Hero */
 
 .hero-banner {
   background-image: url(publication-cover.png);
   background-size: cover;
+  padding: 20px;
+}
+
+/* Navbar */
+
+.navbar {
+  display: flex;
+  flex-flow: row;
+  font-size: 20px;
+  overflow: auto;
+  white-space: nowrap;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.nav-item {
+  padding: 0px 20px;
+  display: inline-block;
+}
+
+.banner-text-container {
+  color: white;
+  text-align: center;
+  padding: 50px 0px 20px 0px;
+}
+
+.site-title {
+  font-size: 55px;
+}
+
+.site-sub-title {
+  font-size: 20px;
+  color: rgb(255, 178, 36);
+}
+
+/* Content */
+.site-content {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  min-height: calc(100vh - 70px);
+  padding: 20px 0px;
+}
+
+.card-title {
+  color: black;
+}
+
+.index-card {
+  border: none !important;
+  width: 100%;
+  padding: 15px 8px 15px 8px;
+}
+
+.index-card:hover {
+  transform: translateY(-3px);
+  transition-duration: 0.45s;
+  box-shadow: 0px 12px 13px 5px rgba(0, 0, 0, 0.28) !important;
+}
+
+.tags-display > a {
+  text-transform: camelCase !important;
+  color: rgba(0, 161, 255, 1) !important;
+  font-size: 13px !important;
 }
