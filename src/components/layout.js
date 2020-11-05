@@ -12,7 +12,7 @@ const layout = ({ children }) => {
         <script
           src="https://kit.fontawesome.com/df5ff3fd43.js"
           crossorigin="anonymous"
-        ></script>
+        />
       </Helmet>
       <Header />
       {children}
