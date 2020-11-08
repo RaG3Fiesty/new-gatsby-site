@@ -1,5 +1,6 @@
 import React from "react"
 import { Navbar, Nav } from "react-bootstrap"
+import Search from "./search"
 
 export default function Header() {
   return (
@@ -37,6 +38,7 @@ export default function Header() {
               </span>
               Tags
             </Nav.Link>
+            <Search />
           </Nav>
         </Navbar>
         <div className="banner-text-container container">
