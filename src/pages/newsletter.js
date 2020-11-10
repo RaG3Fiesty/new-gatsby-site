@@ -4,36 +4,25 @@ import { Card, Container } from "react-bootstrap"
 import Layout from "../components/layout"
 import SEO from "../components/seo.js"
 
-const HomePage = ({ data }) => {
+const NewsletterPage = ({ data }) => {
   return (
     <Layout>
-      <SEO title="🏡 Home" />
+      <SEO title="💌 Sunday Times Sunday" />
       <Container className="site-content">
         {data.allMdx.edges.map(({ node }) => (
           <div key={node.id}>
-            <Card className="index-card">
-              <Card.Body>
-                <p className="tagArray">
-                  {node.frontmatter.tags.map(tagItem => (
-                    <Link
-                      className="tagItem"
-                      to={`/tags/${tagItem}`}
-                      key={tagItem}
-                    >
-                      {tagItem}
-                    </Link>
-                  ))}
-                </p>
-                <Link to={node.fields.slug}>
+            <Link to={node.fields.slug}>
+              <Card className="index-card">
+                <Card.Body>
                   <h4 className="cardTitle">{node.frontmatter.title}</h4>
                   <span className="textMuted">{node.frontmatter.date}</span>
                   <hr />
                   <Card.Text className="textMuted">
                     {node.frontmatter.excerpt}
                   </Card.Text>
-                </Link>
-              </Card.Body>
-            </Card>
+                </Card.Body>
+              </Card>
+            </Link>
           </div>
         ))}
       </Container>
@@ -45,7 +34,7 @@ export const query = graphql`
   {
     allMdx(
       sort: { fields: frontmatter___date, order: DESC }
-      filter: { frontmatter: { type: { eq: "article" } } }
+      filter: { frontmatter: { type: { eq: "newsletter" } } }
     ) {
       edges {
         node {
@@ -55,7 +44,6 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")
-            tags
             excerpt
           }
           id
@@ -64,4 +52,4 @@ export const query = graphql`
     }
   }
 `
-export default HomePage
+export default NewsletterPage

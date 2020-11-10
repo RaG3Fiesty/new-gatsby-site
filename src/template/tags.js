@@ -1,12 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Link, graphql } from "gatsby"
+import Layout from "../components/layout"
 
 const Tags = ({ data }) => {
   const { edges, totalCount } = data.allMdx
   const tagHeader = `Number of posts is ${totalCount}`
   return (
-    <div>
+    <Layout>
       <center>
         <h1 style={{ paddingBottom: "20px" }}>{tagHeader}</h1>
       </center>
@@ -19,7 +20,11 @@ const Tags = ({ data }) => {
               <div className="card content-card">
                 <div className="card-body content-card-body">
                   <h5 className="card-title">
-                    <Link className="card-link" to={slug}>
+                    <Link
+                      className="card-link"
+                      style={{ color: "black" }}
+                      to={slug}
+                    >
                       {title}
                     </Link>
                   </h5>
@@ -33,7 +38,7 @@ const Tags = ({ data }) => {
           )
         })}
       </section>
-    </div>
+    </Layout>
   )
 }
 Tags.propTypes = {
@@ -58,13 +63,15 @@ Tags.propTypes = {
     }),
   }),
 }
-export default Tags
+
 export const pageQuery = graphql`
   query($tag: String) {
     allMdx(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { in: [$tag] } } }
+      filter: {
+        frontmatter: { tags: { in: [$tag] }, type: { ne: "newsletter" } }
+      }
     ) {
       totalCount
       edges {
@@ -80,3 +87,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export default Tags

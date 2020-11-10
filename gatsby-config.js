@@ -21,6 +21,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-twitter`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,

@@ -4,7 +4,7 @@ import Header from "./header"
 import { Helmet } from "react-helmet"
 import "./index.css"
 
-const layout = ({ children }) => {
+const Layout = ({ children }) => {
   return (
     <div>
       <Helmet>
@@ -20,4 +20,4 @@ const layout = ({ children }) => {
   )
 }
 
-export default layout
+export default Layout

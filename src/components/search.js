@@ -1,12 +1,10 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-export default function Search() {
+const Search = () => {
   const data = useStaticQuery(graphql`
     query HeaderQuery {
-      allMdx(
-        sort: { fields: frontmatter___date, order: DESC }
-      ) {
+      allMdx(sort: { fields: frontmatter___date, order: DESC }) {
         edges {
           node {
             fields {
@@ -22,16 +20,44 @@ export default function Search() {
   `)
 
   return (
-    <span className="searchcontainer">
-      <input
-        id="searchbox"
-        type="text"
-        placeholder="🔍"
-        onChange={handleChange}
-      />
-      <ul id="myList">
-        <li></li>
-      </ul>
+    <span className="searchContainer">
+      <button
+        className="display-btn"
+        onClick={() => {
+          document.getElementById("myOverlay").style.display = "block"
+        }}
+      >
+        <span role="img" aria-labelledby="emoji" className="emoji">
+          🔎
+        </span>
+        Search
+      </button>
+      <div id="myOverlay" className="overlay">
+        <center className="overlay-content">
+          <button
+            className="closebtn"
+            onClick={() => {
+              document.getElementById("myOverlay").style.display = "none"
+            }}
+          >
+            <span role="img" aria-labelledby="emoji" className="emoji">
+              ❌
+            </span>
+          </button>
+          <span className="searchcontainer overlay-content">
+            <input
+              id="searchbox"
+              type="text"
+              placeholder="🔎"
+              onChange={handleChange}
+              label="search"
+            />
+            <ul id="myList">
+              <li></li>
+            </ul>
+          </span>
+        </center>
+      </div>
     </span>
   )
 
@@ -61,3 +87,4 @@ export default function Search() {
     })
   }
 }
+export default Search

@@ -1,25 +1,27 @@
 import React from "react"
+import { Card, Container } from "react-bootstrap"
 import Layout from "../components/layout"
 import SEO from "../components/seo.js"
-import { Card } from "react-bootstrap"
 
-export default function Four0Four() {
+const Four0Four = () => {
   return (
     <Layout>
       <SEO title="⛔ 404" />
 
-      <section className="site-content container">
+      <Container className="site-content">
         <Card>
-          <div className="card-body content-card-body">
-            <h4 className="card-title">404</h4>
-            <p className="card-text text-muted">
+          <Card.body>
+            <h4 className="cardTitle">404</h4>
+            <Card.text className="textMuted">
               It seems that I don't have what you are looking for here. You may
               want to check out the Navigation Bar above and browse through
               content.
-            </p>
-          </div>
+            </Card.text>
+          </Card.body>
         </Card>
-      </section>
+      </Container>
     </Layout>
   )
 }
+
+export default Four0Four
