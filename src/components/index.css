@@ -345,7 +345,7 @@ img {
 @media only screen and (max-width: 425px) {
   .article,
   .newsletter {
-    max-width: 330px;
+    max-width: 95%;
   }
   .article-body,
   .newsletter-body {
