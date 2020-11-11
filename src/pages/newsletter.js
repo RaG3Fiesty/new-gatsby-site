@@ -18,7 +18,9 @@ const NewsletterPage = ({ data }) => {
                   <span className="textMuted">{node.frontmatter.date}</span>
                   <hr />
                   <Card.Text className="textMuted">
-                    {node.frontmatter.excerpt}
+                    {node.frontmatter.excerpt === ""
+                      ? node.excerpt
+                      : node.frontmatter.excerpt}
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -46,6 +48,7 @@ export const query = graphql`
             date(formatString: "MMMM DD, YYYY")
             excerpt
           }
+          excerpt(pruneLength: 150)
           id
         }
       }

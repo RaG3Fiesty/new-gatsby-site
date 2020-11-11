@@ -1,0 +1,81 @@
+---
+title: "⁉ Roam Research weekly reviews and queries"
+date: "2020-09-17"
+type: article
+tags: ["🤯RoamResearch"]
+excerpt: ""
+featuredImage: "../images/featured/rr-weekly-queries.jpg"
+---
+
+![rr-weekly-wueries](../images/featured/rr-weekly-queries.jpg)
+
+Now for example you watch one of [Ali Abdaal](aliabsaaal.com)'s videos. You get motivated and in that fire you decide to setup your own productivity system. You get a To-do List manager, a calendar and and tape it together and say that it is a good day's work. The next day you use it. Maybe you even use it another day. But at last on the third or the fourth day, your system is all cluttered. You don't know what is where and what you should do.
+
+This happens due to a entropy or chaos. But what is chaos I hear you ask what is entropy? Basically, entropy is the tendency of a system to fall apart or get cluttered. You make a To-do list management system and use it for Quick Capture, in the course of a few days, there are hundreds of rogue tasks which have been completed but haven't been checked off, there are tasks which are mega urgent but you can't find it. That is entropy.
+
+Weekly Reviews are a process which you can use to prevent this from happening. They are the guardians of your system. They prevent entropy. You can do these on any system, no matter if it isn't Roam Research. or todoist. Heck you can even do these with pen and paper. You just sit down on a day for about an hour and go through all of your system. Got a lot of rogue todos? Put them in a list. Got a lot of uncategorised tasks? Categorise them. Also, ask yourselves a few questions like "What went well this week?" or "What didn't go so well this week and how can I improve it next week?". These help you progress. If you maintain a journal, then go through all the entries for the week. Take notes on them too if you are into that. Now, lets get into how I do it using Roam Research.
+
+So I do maintain a journal and therefore, I also take notes on it. It gives you a lot of joy when you see what your a week younger self was thinking about. Now, I use one of Roam's most powerful features. Queries! It is the language that you talk to Roam with. Here is the query that I use
+
+```
+{{[[query]]: {and: {or: [[💭Journal]] [[🌄Morning Pages]] [[📰3-Minute Journal]]} {between: [[September 11th, 2020]] [[September 12th, 2020]]}}}}
+```
+
+Now, don't get scared and let me explain. First of all the
+
+```
+{{[[query]]:
+```
+
+part just tells Roam that there is a query coming up. It initialises it. Then we have
+
+```
+{and: [[Input-1]] [[Input-2]] [[Input-3]]...}
+```
+
+This will only display stuff if it has all the criterion satisfied There is also the
+
+```
+{or: [[Input-1]] [[Input-2]] [[Input-3]]...}
+```
+
+At last there is the
+
+```
+{between: [[Date1]] [[Date2]]}
+```
+
+This takes in two inputs as Dates. It will basically get all the daily notes day pages between those two dates, incusive
+
+Here is one of my favourite abilities of queries, you can nest them!! You can have something like
+
+```
+{and: {or: [[Input-1]] [[Input-2]] [[Input-3]]...} {or: [[Input-4]] [[Input-5]] [[Input-6]]...}}
+```
+
+Lets break this down. What do you think this will do? It will display all the blocks which have been tagged with or are nested within
+
+```
+([[Input-1]] or [[Input-2]] or [[Input-3]] or ...) and ([[Input-4]] [[Input-5]] [[Input-6]]...)
+```
+
+Now that is cool!!
+
+So lets breakdown my query for the weekly review
+
+```
+{and: {or: } {between: }}
+```
+
+Now this will go for anything that is in the `{or: }` part AND is between the two dates
+
+Now what will be the answer to me weekly review query?
+
+```
+{{[[query]]: }} -- Initialises the query
+{or: [[💭Journal]] [[🌄Morning Pages]] [[📰3-Minute Journal]]} -- Asks Roam to get a list of all the blocks linked to [[💭Journal]] or [[🌄Morning Pages]] or [[📰3-Minute Journal]]
+{between [[Previous sunday's date]] [[Saturday's date]]} -- Gets everything from the previous sunday to saturday as I do my weekly reivews on Sundays
+{and: {or: [[💭Journal]] [[🌄Morning Pages]] [[📰3-Minute Journal]]} {between: [[September 11th, 2020]] [[September 12th, 2020]]}} -- It displays everything that is at least linked to one of the journals AND is in between the date range
+```
+
+Isn't this cool!

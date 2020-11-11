@@ -125,7 +125,7 @@ module.exports = {
               //   If this is set to true, all CSS
               //   property names will be recognized
               //   as styleAttribute.
-              styleAttributes: [`display`, `position`, `border`],
+              styleAttributes: true,
 
               // ?Boolean
               //   If true, all attributes that

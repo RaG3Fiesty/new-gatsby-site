@@ -7,13 +7,7 @@ import "./index.css"
 const Layout = ({ children }) => {
   return (
     <div>
-      <Helmet>
-        {/* Fonts */}
-        <script
-          src="https://kit.fontawesome.com/df5ff3fd43.js"
-          crossorigin="anonymous"
-        />
-      </Helmet>
+      <Helmet></Helmet>
       <Header />
       {children}
     </div>

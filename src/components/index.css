@@ -171,19 +171,29 @@ a:hover {
 .site-content {
   display: grid;
   gap: 30px;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(263px, 1fr));
   padding: 20px 0px;
   /* min-height: calc(100vh - 70px); */
 }
 
 .cardTitle {
   color: rgb(33, 37, 41);
+  padding-top: 20px;
+}
+
+.featured-img {
+  max-width: 60%;
+  flex: 100%;
 }
 
 .index-card {
   border: none;
   width: 100%;
   padding: 15px 8px 15px 8px;
+}
+
+.index-card .tagArray {
+  padding-bottom: 20px;
 }
 
 .textMuted {
@@ -247,8 +257,14 @@ a:hover {
 }
 
 .article img,
-.newsletter img {
+.newsletter img,
+img {
   box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.featured-img {
+  box-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.2) !important;
+  padding: 47%;
 }
 
 .article-title,
@@ -293,12 +309,20 @@ a:hover {
   .newsletter {
     max-width: 250px;
   }
+
+  .featured-img {
+    max-width: 80%;
+  }
 }
 
 @media only screen and (max-width: 300px) {
   .article,
   .newsletter {
     max-width: 280px;
+  }
+
+  .featured-img {
+    max-width: 100%;
   }
 }
 

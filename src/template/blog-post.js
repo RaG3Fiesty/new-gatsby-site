@@ -34,8 +34,7 @@ const PostTemplate = ({ data }) => {
         </Container>
       </Layout>
     )
-  } else {
-    // document.body.style.backgroundColor = "rgb(255, 25, 255)"
+  } else if (contentType === "article") {
     const tagArray = data.mdx.frontmatter.tags
     return (
       <Layout>
@@ -71,6 +70,43 @@ const PostTemplate = ({ data }) => {
         </Container>
       </Layout>
     )
+  } else {
+    const tagArray = data.mdx.frontmatter.tags
+    return (
+      <Layout>
+        <SEO title={post.frontmatter.title} />
+        <Container className="article">
+          <center>
+            <Container className="article-title-container">
+              <h1 className="article-title">{post.frontmatter.title}</h1>
+              <div className="article-metadata">
+                <p className="tagArray">
+                  {tagArray.map(tagItem => (
+                    <Link
+                      key={tagItem}
+                      className="tagItem"
+                      to={`/tags/${tagItem}`}
+                    >
+                      {tagItem}
+                    </Link>
+                  ))}
+                </p>
+                {post.timeToRead === 1 ? (
+                  <span className="timeToRead">{post.timeToRead} min</span>
+                ) : (
+                  <span className="timeToRead">{post.timeToRead} mins</span>
+                )}
+                <span className="author-name">{post.frontmatter.author}</span>
+              </div>
+            </Container>
+          </center>
+          {/* <hr /> <br /> */}
+          <Container className="article-body">
+            <MDXRenderer>{post.body}</MDXRenderer>
+          </Container>
+        </Container>
+      </Layout>
+    )
   }
 }
 
@@ -83,6 +119,7 @@ export const query = graphql`
         title
         tags
         type
+        author
       }
     }
   }

@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 import { Card, Container } from "react-bootstrap"
 import Layout from "../components/layout"
 import SEO from "../components/seo.js"
+import Img from "gatsby-image"
 
 const HomePage = ({ data }) => {
   return (
@@ -25,11 +26,22 @@ const HomePage = ({ data }) => {
                   ))}
                 </p>
                 <Link to={node.fields.slug}>
+                  <center>
+                    <Img
+                      className="featured-img"
+                      style={{ objectFit: "contain" }}
+                      fluid={
+                        node.frontmatter.featuredImage.childImageSharp.fluid
+                      }
+                    />
+                  </center>
                   <h4 className="cardTitle">{node.frontmatter.title}</h4>
                   <span className="textMuted">{node.frontmatter.date}</span>
                   <hr />
                   <Card.Text className="textMuted">
-                    {node.frontmatter.excerpt}
+                    {node.frontmatter.excerpt === ""
+                      ? node.excerpt
+                      : node.frontmatter.excerpt}
                   </Card.Text>
                 </Link>
               </Card.Body>
@@ -57,7 +69,15 @@ export const query = graphql`
             date(formatString: "MMMM DD, YYYY")
             tags
             excerpt
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 300) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
+          excerpt(pruneLength: 150)
           id
         }
       }
