@@ -172,7 +172,7 @@ a:hover {
   display: grid;
   gap: 30px;
   grid-template-columns: repeat(auto-fit, minmax(263px, 1fr));
-  padding: 20px 0px;
+  padding: 20px 15px;
   /* min-height: calc(100vh - 70px); */
 }
 
@@ -294,38 +294,6 @@ img {
   background-color: rgb(186, 238, 253);
 }
 
-@media only screen and (max-width: 750px) {
-  #searchbox {
-    width: 500px;
-    height: 50px;
-  }
-  .closebtn {
-    transform: scale(1.5);
-  }
-}
-
-@media only screen and (max-width: 425px) {
-  .article,
-  .newsletter {
-    max-width: 250px;
-  }
-
-  .featured-img {
-    max-width: 80%;
-  }
-}
-
-@media only screen and (max-width: 300px) {
-  .article,
-  .newsletter {
-    max-width: 280px;
-  }
-
-  .featured-img {
-    max-width: 100%;
-  }
-}
-
 .article,
 .newsletter {
   background-color: white;
@@ -356,4 +324,46 @@ img {
 
 .article-metadata {
   text-align: center;
+}
+
+@media only screen and (max-width: 990px) {
+  .navbar {
+    padding-left: 0px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  #searchbox {
+    width: 500px;
+    height: 50px;
+  }
+  .closebtn {
+    transform: scale(1.5);
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .article,
+  .newsletter {
+    max-width: 250px;
+  }
+  .article-body,
+  .newsletter-body {
+    padding: 30px 15px;
+  }
+
+  .featured-img {
+    max-width: 80%;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .article,
+  .newsletter {
+    max-width: 280px;
+  }
+
+  .featured-img {
+    max-width: 100%;
+  }
 }
