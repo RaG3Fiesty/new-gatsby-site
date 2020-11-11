@@ -40,29 +40,28 @@ const PostTemplate = ({ data }) => {
       <Layout>
         <SEO title={post.frontmatter.title} />
         <Container className="article">
-          <center>
-            <Container className="article-title-container">
-              <h1 className="article-title">{post.frontmatter.title}</h1>
-              <div className="article-metadata">
-                <p className="tagArray">
-                  {tagArray.map(tagItem => (
-                    <Link
-                      key={tagItem}
-                      className="tagItem"
-                      to={`/tags/${tagItem}`}
-                    >
-                      {tagItem}
-                    </Link>
-                  ))}
-                </p>
-                {post.timeToRead === 1 ? (
-                  <span className="timeToRead">{post.timeToRead} min</span>
-                ) : (
-                  <span className="timeToRead">{post.timeToRead} mins</span>
-                )}
-              </div>
-            </Container>
-          </center>
+          <Container className="article-title-container">
+            <h1 className="article-title">{post.frontmatter.title}</h1>
+            <div className="article-metadata">
+              <p className="tagArray">
+                {tagArray.map(tagItem => (
+                  <Link
+                    key={tagItem}
+                    className="tagItem"
+                    to={`/tags/${tagItem}`}
+                  >
+                    {tagItem}
+                  </Link>
+                ))}
+              </p>
+              {post.timeToRead === 1 ? (
+                <span className="timeToRead">{post.timeToRead} min</span>
+              ) : (
+                <span className="timeToRead">{post.timeToRead} mins</span>
+              )}
+            </div>
+          </Container>
+
           {/* <hr /> <br /> */}
           <Container className="article-body">
             <MDXRenderer>{post.body}</MDXRenderer>
