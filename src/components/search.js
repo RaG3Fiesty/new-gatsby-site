@@ -67,11 +67,11 @@ const Search = () => {
 
     myList.innerHTML = ""
     var searchValue = e.target.value.toLowerCase()
-    // var searchValue = newsearchValue.toLowerCase()
+
     data.allMdx.edges.map(({ node }) => {
       var articleTitle = node.frontmatter.title
       var articleLink = node.fields.slug
-      // var searchArticleTitle = articleTitle.toLowerCase()
+
       if (articleTitle.toLowerCase().includes(searchValue)) {
         var liNode = document.createElement("li")
         var aNode = document.createElement("a")
