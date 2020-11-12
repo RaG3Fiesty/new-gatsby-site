@@ -62,7 +62,6 @@ const PostTemplate = ({ data }) => {
             </div>
           </Container>
 
-          {/* <hr /> <br /> */}
           <Container className="article-body">
             <MDXRenderer>{post.body}</MDXRenderer>
           </Container>

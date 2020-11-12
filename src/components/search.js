@@ -25,6 +25,7 @@ const Search = () => {
         className="display-btn"
         onClick={() => {
           document.getElementById("myOverlay").style.display = "block"
+          document.getElementById("searchbox").focus()
         }}
       >
         <span role="img" aria-labelledby="emoji" className="emoji">
@@ -65,13 +66,13 @@ const Search = () => {
     var myList = document.getElementById("myList")
 
     myList.innerHTML = ""
-    var searchValue = e.target.value
-
+    var searchValue = e.target.value.toLowerCase()
+    // var searchValue = newsearchValue.toLowerCase()
     data.allMdx.edges.map(({ node }) => {
       var articleTitle = node.frontmatter.title
       var articleLink = node.fields.slug
-
-      if (articleTitle.includes(searchValue)) {
+      // var searchArticleTitle = articleTitle.toLowerCase()
+      if (articleTitle.toLowerCase().includes(searchValue)) {
         var liNode = document.createElement("li")
         var aNode = document.createElement("a")
 
