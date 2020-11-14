@@ -80,6 +80,14 @@ module.exports = {
               `800i`,
             ],
           },
+          {
+            family: `Lobster`,
+            variants: [`400`],
+          },
+          {
+            family: `David Libre`,
+            variants: [`400`, `500`, `700`],
+          },
         ],
       },
     },

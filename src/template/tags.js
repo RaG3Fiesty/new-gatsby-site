@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Link, graphql } from "gatsby"
+import { Card, Container } from "react-bootstrap"
 import Layout from "../components/layout"
 
 const Tags = ({ data }) => {
@@ -11,15 +12,15 @@ const Tags = ({ data }) => {
       <center>
         <h1 style={{ paddingBottom: "20px" }}>{tagHeader}</h1>
       </center>
-      <section className="site-content container">
+      <Container className="site-content">
         {edges.map(({ node }) => {
           const { slug } = node.fields
           const { title } = node.frontmatter
           return (
-            <div key={slug}>
-              <div className="card content-card">
-                <div className="card-body content-card-body">
-                  <h5 className="card-title">
+            <span key={slug}>
+              <Card className="index-card">
+                <Card.Body className="card-body">
+                  <h4 className="cardTitle">
                     <Link
                       className="card-link"
                       style={{ color: "black" }}
@@ -27,17 +28,13 @@ const Tags = ({ data }) => {
                     >
                       {title}
                     </Link>
-                  </h5>
-                  <span className="text-muted">{node.frontmatter.date}</span>
-                  <p className="card-text text-muted">
-                    {node.frontmatter.excerpt}
-                  </p>
-                </div>
-              </div>
-            </div>
+                  </h4>
+                </Card.Body>
+              </Card>
+            </span>
           )
         })}
-      </section>
+      </Container>
     </Layout>
   )
 }

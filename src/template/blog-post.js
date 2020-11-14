@@ -1,4 +1,3 @@
-import "katex/dist/katex.min.css"
 import React from "react"
 import Layout from "../components/layout"
 import { Link, graphql } from "gatsby"

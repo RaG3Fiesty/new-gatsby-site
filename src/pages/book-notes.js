@@ -1,6 +1,7 @@
 import React from "react"
-import Layout from "../components/layout"
 import { Link, graphql } from "gatsby"
+import { Card, Container } from "react-bootstrap"
+import Layout from "../components/layout"
 import SEO from "../components/seo.js"
 import Img from "gatsby-image"
 
@@ -8,46 +9,42 @@ export default function Home({ data }) {
   return (
     <Layout>
       <SEO title="💸 Notes" />
-      <section className="site-content container">
+      <Container className="site-content">
         {data.allMdx.edges.map(({ node }) => (
-          <span key={node.id}>
-            <a className="card-link" href={node.fields.slug}>
-              <div className="layout">
-                <div
-                  class="layout__item layout__item--figure"
-                  style={{ width: "400px" }}
-                >
-                  <Img
-                    className="featured-img"
-                    style={{ objectFit: "contain" }}
-                    fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
-                  />
-                </div>
-                <div class="layout__item layout__item--body">
-                  <p
-                    style={{
-                      textTransform: "camelCase",
-                      color: "rgba(0, 161, 255, 1)",
-                      fontSize: "13px",
-                    }}
+          <Card className="index-card" key={node.id}>
+            <Card.Body>
+              <p className="tagArray">
+                {node.frontmatter.tags.map(tagItem => (
+                  <Link
+                    className="tagItem"
+                    to={`/tags/${tagItem}`}
+                    key={tagItem}
                   >
-                    <Link to={`/tags/${node.frontmatter.tags[0]}`}>
-                      {node.frontmatter.tags[0]}
-                    </Link>
-                  </p>
-                  <p>Author: {node.frontmatter.title}</p>
-                  <h4 className="card-title">{node.frontmatter.title}</h4>
-                  <span className="text-muted">{node.frontmatter.date}</span>
-                  <hr />
-                  <p className="card-text text-muted">
-                    {node.frontmatter.excerpt}
-                  </p>
-                </div>
-              </div>
-            </a>
-          </span>
+                    {tagItem}
+                  </Link>
+                ))}
+              </p>
+              <Link to={node.fields.slug}></Link>
+              <center>
+                <Img
+                  className="featured-img"
+                  style={{ objectFit: "contain" }}
+                  fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
+                />
+              </center>
+
+              <h4 className="cardTitle">{node.frontmatter.title}</h4>
+              <Card.Text className="textMuted">
+                Author: {node.frontmatter.author}
+                <br />
+                {node.frontmatter.date}
+                <hr />
+                <p>{node.frontmatter.excerpt}</p>
+              </Card.Text>
+            </Card.Body>
+          </Card>
         ))}
-      </section>
+      </Container>
     </Layout>
   )
 }

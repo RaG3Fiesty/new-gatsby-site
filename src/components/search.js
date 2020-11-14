@@ -64,25 +64,18 @@ const Search = () => {
 
   function handleChange(e) {
     var myList = document.getElementById("myList")
-
     myList.innerHTML = ""
     var searchValue = e.target.value.toLowerCase()
-
     data.allMdx.edges.map(({ node }) => {
       var articleTitle = node.frontmatter.title
       var articleLink = node.fields.slug
-
       if (articleTitle.toLowerCase().includes(searchValue)) {
         var liNode = document.createElement("li")
         var aNode = document.createElement("a")
-
         aNode.href = articleLink
-
         var text = document.createTextNode(articleTitle)
-
         aNode.appendChild(text)
         liNode.appendChild(aNode)
-
         myList.appendChild(liNode)
       }
     })

@@ -6,6 +6,7 @@ import camelCase from "lodash/camelCase"
 
 // Components
 import { Link, graphql } from "gatsby"
+import { Card, Container } from "react-bootstrap"
 import SEO from "../components/seo.js"
 import Layout from "../components/layout"
 
@@ -23,24 +24,24 @@ const TagsPage = ({
       <h1 style={{ paddingBottom: "20px" }}>Tags</h1>
     </center>
 
-    <section className="site-content container">
+    <Container className="site-content">
       {group.map(tag => (
         <div key={tag.fieldValue}>
           <Link
             className="card-link"
             to={`/tags/${camelCase(tag.fieldValue)}/`}
           >
-            <div className="card content-card">
-              <div className="card-body content-card-body">
-                <h5 className="card-title">
+            <Card className="index-card">
+              <Card.Body>
+                <h4 className="cardTitle">
                   {tag.fieldValue} ({tag.totalCount})
-                </h5>
-              </div>
-            </div>
+                </h4>
+              </Card.Body>
+            </Card>
           </Link>
         </div>
       ))}
-    </section>
+    </Container>
   </Layout>
 )
 
