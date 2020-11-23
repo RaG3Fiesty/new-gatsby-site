@@ -27,70 +27,70 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,
     `gatsby-remark-images`,
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Lato`,
-            variants: [
-              `300`,
-              `300i`,
-              `400`,
-              `400i`,
-              `700`,
-              `700i`,
-              `900`,
-              `900i`,
-            ],
-          },
-          {
-            family: `Roboto`,
-            variants: [
-              `300`,
-              `300i`,
-              `400`,
-              `400i`,
-              `500`,
-              `500i`,
-              `700`,
-              `700i`,
-              `900`,
-              `900i`,
-            ],
-          },
-          {
-            family: `PT Serif`,
-            variants: [`400`, `400i`, `700`, `700i`],
-          },
-          {
-            family: `PT Sans`,
-            variants: [`400`, `400i`, `700`, `700i`],
-          },
-          {
-            family: `Open Sans`,
-            variants: [
-              `400`,
-              `400i`,
-              `600`,
-              `600i`,
-              `700`,
-              `700i`,
-              `800`,
-              `800i`,
-            ],
-          },
-          {
-            family: `Lobster`,
-            variants: [`400`],
-          },
-          {
-            family: `David Libre`,
-            variants: [`400`, `500`, `700`],
-          },
-        ],
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
+    //   options: {
+    //     fonts: [
+    //       {
+    //         family: `Lato`,
+    //         variants: [
+    //           `300`,
+    //           `300i`,
+    //           `400`,
+    //           `400i`,
+    //           `700`,
+    //           `700i`,
+    //           `900`,
+    //           `900i`,
+    //         ],
+    //       },
+    //       {
+    //         family: `Roboto`,
+    //         variants: [
+    //           `300`,
+    //           `300i`,
+    //           `400`,
+    //           `400i`,
+    //           `500`,
+    //           `500i`,
+    //           `700`,
+    //           `700i`,
+    //           `900`,
+    //           `900i`,
+    //         ],
+    //       },
+    //       {
+    //         family: `PT Serif`,
+    //         variants: [`400`, `400i`, `700`, `700i`],
+    //       },
+    //       {
+    //         family: `PT Sans`,
+    //         variants: [`400`, `400i`, `700`, `700i`],
+    //       },
+    //       {
+    //         family: `Open Sans`,
+    //         variants: [
+    //           `400`,
+    //           `400i`,
+    //           `600`,
+    //           `600i`,
+    //           `700`,
+    //           `700i`,
+    //           `800`,
+    //           `800i`,
+    //         ],
+    //       },
+    //       {
+    //         family: `Lobster`,
+    //         variants: [`400`],
+    //       },
+    //       {
+    //         family: `David Libre`,
+    //         variants: [`400`, `500`, `700`],
+    //       },
+    //     ],
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

@@ -26,7 +26,6 @@ const PostTemplate = ({ data }) => {
             </Container>
           </center>
 
-          {/* <hr /> <br /> */}
           <Container className="newsletter-body">
             <MDXRenderer>{post.body}</MDXRenderer>
           </Container>
@@ -88,16 +87,20 @@ const PostTemplate = ({ data }) => {
                     </Link>
                   ))}
                 </p>
+                <span className="author-name">{post.frontmatter.author}</span>
+                <br />
+                <span className="author-name">{post.frontmatter.category}</span>
+                <br />
+                <span className="author-name">{post.frontmatter.rating}</span>
+                <br />
                 {post.timeToRead === 1 ? (
                   <span className="timeToRead">{post.timeToRead} min</span>
                 ) : (
                   <span className="timeToRead">{post.timeToRead} mins</span>
                 )}
-                <span className="author-name">{post.frontmatter.author}</span>
               </div>
             </Container>
           </center>
-          {/* <hr /> <br /> */}
           <Container className="article-body">
             <MDXRenderer>{post.body}</MDXRenderer>
           </Container>
@@ -117,6 +120,8 @@ export const query = graphql`
         tags
         type
         author
+        category
+        rating
       }
     }
   }

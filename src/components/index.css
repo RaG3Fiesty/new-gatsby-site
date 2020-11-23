@@ -2,6 +2,29 @@
 font-family: 'Open Sans', sans-serif;
 font-family: 'PT Sans', sans-serif;
 font-family: 'PT Serif', serif; */
+/* 
+@font-face {
+  font-family: David Libre;
+  src: url(./fonts/davidlibre/v5/snfus0W_99N64iuYSvp4W8l74Jk.woff);
+}
+@font-face {
+  font-family: Lato;
+  src: url(./fonts/lato/v17/S6u8w4BMUTPHjxsAXC-s.woff);
+}
+
+@font-face {
+  font-family: Lobster;
+  src: url(./fonts/lobster/v23/neILzCirqoswsqX9zoKmNQ.woff);
+}
+
+@font-face {
+  font-family: PT Serif;
+  src: url(./fonts/ptserif/v12/EJRQQgYoZZY2vCFuvAFT9gaQZynfpg.woff);
+}
+@font-face {
+  font-family: Lato;
+  src: url(./fonts/lato/v17/S6u8w4BMUTPHjxsAXC-s.woff);
+} */
 
 ::selection {
   background-color: rgba(99, 255, 36, 0.4);

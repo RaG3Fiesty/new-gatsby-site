@@ -26,7 +26,7 @@ const Header = () => {
               </span>
               Sunday Times Sunday
             </Nav.Link>
-            <Nav.Link className="nav-item nav-link" href="/book-notes">
+            <Nav.Link className="nav-item nav-link" href="/notes">
               <span role="img" aria-labelledby="emoji" className="emoji">
                 📚
               </span>

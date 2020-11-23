@@ -161,7 +161,7 @@ const Footer = () => {
                 </Link>
               </p>
               <p>
-                <Link href="/book-notes">
+                <Link href="/notes">
                   <span role="img" aria-labelledby="emoji" className="emoji">
                     📚
                   </span>
