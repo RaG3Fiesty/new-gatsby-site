@@ -65,23 +65,6 @@ module.exports = {
               variants: [`400`, `400i`, `700`, `700i`],
             },
             {
-              family: `PT Sans`,
-              variants: [`400`, `400i`, `700`, `700i`],
-            },
-            {
-              family: `Open Sans`,
-              variants: [
-                `400`,
-                `400i`,
-                `600`,
-                `600i`,
-                `700`,
-                `700i`,
-                `800`,
-                `800i`,
-              ],
-            },
-            {
               family: `Lobster`,
               variants: [`400`],
             },
