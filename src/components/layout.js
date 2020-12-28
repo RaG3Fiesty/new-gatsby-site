@@ -9,7 +9,7 @@ import "./index.css"
 const Layout = ({ children }) => {
   return (
     <div>
-            <Helmet>
+      <Helmet>
         {/* Google Analytics Tag */}
         <script
           async
