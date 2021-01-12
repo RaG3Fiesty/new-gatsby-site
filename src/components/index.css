@@ -39,6 +39,7 @@ h5,
 h6 {
   color: rgb(33, 37, 41);
   font-family: "Lato", sans-serif;
+  margin-left: -4px;
 }
 
 h1,
@@ -114,6 +115,7 @@ a:hover {
 #searchbox {
   width: 700px;
   height: 70px;
+  padding-left: 20px;
 }
 
 .overlay {
@@ -478,6 +480,12 @@ footer hr {
 .quote-origin {
   width: 100%;
   font-family: "David Libre", serif;
+}
+
+dl,
+ol,
+ul {
+  margin-left: 30px;
 }
 
 @media only screen and (max-width: 990px) {
