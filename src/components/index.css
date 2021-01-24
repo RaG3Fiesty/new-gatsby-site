@@ -118,6 +118,10 @@ a:hover {
   padding-left: 20px;
 }
 
+#myList {
+  list-style-type: none;
+}
+
 .overlay {
   height: 100%;
   width: 100%;
