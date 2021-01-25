@@ -97,6 +97,20 @@ module.exports = {
         path: `${__dirname}/src/pages/content/`,
       },
     },
+    // manifest start
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `A Producitve Nerd`,
+        short_name: `A Producitve Nerd`,
+        start_url: `/`,
+        background_color: `#E9F1FF`,
+        theme_color: `#E9F1FF`,
+        display: `standalone`,
+        icon: `manifest-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    // manifest end
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
@@ -142,6 +156,9 @@ module.exports = {
         },
       },
     },
+
+    // offline start
+    `gatsby-plugin-offline`, // offline end
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
