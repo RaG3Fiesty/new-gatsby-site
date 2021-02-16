@@ -18,7 +18,7 @@ const AboutMe = () => {
           <hr />
           <h2>Who am I?</h2>
           <Card.Text>
-            I am a 14-year-old nerd who loves physics. For the last 2 years or
+            I am a 15-year-old nerd who is interested in physics, philosophy, productivity, leading a meaningful life and programming. For the last 2 years or
             so, my interests have peaked in the productivity sphere. In these 2
             years, I have read books, gained some good old knowledge about this
             field, and have used my knowledge to better my life as well. This

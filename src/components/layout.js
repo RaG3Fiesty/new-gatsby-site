@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
   return (
     <div>
       <Helmet>
-        {/* Google Analytics Tag */}
+        {/* Google Analytics */}
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=UA-172115128-2"
@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
           `}
         </script>
 
-        {/* Microsoft Clarity */}
+        {/* Microsoft Clarity
         <script type="text/javascript">
           {`
               (function(c,l,a,r,i,t,y){
@@ -34,7 +34,7 @@ const Layout = ({ children }) => {
               y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
               })(window, document, "clarity", "script", "3w00udr4mh");
           `}
-        </script>
+        </script> */}
       </Helmet>
       <Header />
       {children}

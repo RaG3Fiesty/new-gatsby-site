@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Link, graphql } from "gatsby"
 import { Card, Container } from "react-bootstrap"
 import Layout from "../components/layout"
-
+import Img from "gatsby-image"
 const Tags = ({ data }) => {
   const { edges, totalCount } = data.allMdx
   const tagHeader = `Number of posts is ${totalCount}`
@@ -13,27 +13,33 @@ const Tags = ({ data }) => {
         <h1 style={{ paddingBottom: "20px" }}>{tagHeader}</h1>
       </center>
       <Container className="site-content">
-        {edges.map(({ node }) => {
-          const { slug } = node.fields
-          const { title } = node.frontmatter
-          return (
-            <span key={slug}>
-              <Card className="index-card">
-                <Card.Body className="card-body">
-                  <h4 className="cardTitle">
-                    <Link
-                      className="card-link"
-                      style={{ color: "black" }}
-                      to={slug}
-                    >
-                      {title}
-                    </Link>
-                  </h4>
-                </Card.Body>
-              </Card>
-            </span>
-          )
-        })}
+        {data.allMdx.edges.map(({ node }) => (
+          <div key={node.id}>
+            <Card className="index-card">
+              <Card.Body>
+                <Link to={node.fields.slug}>
+                  <center>
+                    <Img
+                      className="featured-img"
+                      style={{ objectFit: "contain" }}
+                      fluid={
+                        node.frontmatter.featuredImage.childImageSharp.fluid
+                      }
+                    />
+                  </center>
+                  <h4 className="cardTitle">{node.frontmatter.title}</h4>
+                  <span className="textMuted">{node.frontmatter.date}</span>
+                  <hr />
+                  <Card.Text className="textMuted">
+                    {node.frontmatter.excerpt === ""
+                      ? node.excerpt
+                      : node.frontmatter.excerpt}
+                  </Card.Text>
+                </Link>
+              </Card.Body>
+            </Card>
+          </div>
+        ))}
       </Container>
     </Layout>
   )
@@ -78,7 +84,19 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
+            date(formatString: "MMMM DD, YYYY")
+            tags
+            excerpt
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 300) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
+          excerpt(pruneLength: 150)
+          id
         }
       }
     }
