@@ -71,7 +71,7 @@ const PostTemplate = ({ data }) => {
     return (
       <Layout>
         <SEO title={post.frontmatter.title} />
-        <Container className="article">
+        <article className="article container">
           <center>
             <Container className="article-title-container">
               <h1 className="article-title">{post.frontmatter.title}</h1>
@@ -104,7 +104,7 @@ const PostTemplate = ({ data }) => {
           <Container className="article-body">
             <MDXRenderer>{post.body}</MDXRenderer>
           </Container>
-        </Container>
+        </article>
       </Layout>
     )
   }

@@ -5,7 +5,7 @@ import { Card, Container } from "react-bootstrap"
 import Layout from "../components/layout"
 import Img from "gatsby-image"
 const Tags = ({ data }) => {
-  const { edges, totalCount } = data.allMdx
+  const { totalCount } = data.allMdx
   const tagHeader = `Number of posts is ${totalCount}`
   return (
     <Layout>
