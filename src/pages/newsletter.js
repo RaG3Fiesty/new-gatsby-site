@@ -33,6 +33,8 @@ const NewsletterPage = ({ data }) => {
 }
 
 export const query = graphql`
+
+Die in a car crash
   {
     allMdx(
       sort: { fields: frontmatter___date, order: DESC }
